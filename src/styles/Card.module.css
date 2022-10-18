@@ -1,0 +1,27 @@
+.Link {
+    text-decoration: none;
+    color: white;
+}
+
+.Link:hover {
+    text-decoration: underline;
+}
+
+.Image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Card {
+    background-color: var(--primary);
+    padding: 12px 15px;
+    border-radius: 7px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.Title,
+.Average {
+    margin: 0;
+}
