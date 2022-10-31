@@ -1,10 +1,10 @@
-import CardList from "components/CardList"
 import TopBar from "components/TopBar"
 import useDebounce from "hooks/useDebounce"
 import { useEffect, useState } from "react"
 import styles from "styles/Home.module.css"
 import config from "config"
 import { GENRES } from "../constants"
+import Card from "components/Card"
 
 const Home = () => {
     const [movies, setMovies] = useState([])
@@ -48,7 +48,11 @@ const Home = () => {
     return (
         <div className={styles.Container}>
             <TopBar search={search} setSearch={setSearch} />
-            <CardList movies={movies} />
+            <div className={styles.CardList}>
+                {movies?.map((movie) => (
+                    <Card key={movie.id} movie={movie} />
+                ))}
+            </div>
         </div>
     )
 }

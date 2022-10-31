@@ -35,10 +35,16 @@
     display: flex;
     overflow: scroll;
     align-items: start;
+    gap: 15px;
 }
 
-.Actors > * {
+.Actor {
     text-align: center;
+    color: white;
+}
+
+.Actor:not(:hover) {
+    text-decoration: none;
 }
 
 .Tags {

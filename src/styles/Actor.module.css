@@ -1,0 +1,64 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: white;
+}
+
+.Images {
+    display: flex;
+    overflow: scroll;
+    align-items: start;
+    gap: 15px;
+    height: 200px;
+}
+
+.Image {
+    height: 100%;
+}
+
+.Section div {
+    margin-left: 10px;
+}
+
+.Collapsed {
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+
+.Collapse {
+    color: white;
+}
+
+.Credits {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    height: 500px;
+    overflow: scroll;
+}
+
+.ReadMore {
+    text-decoration: underline;
+}
+
+.Movie {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    gap: 5px;
+}
+
+.Movie:hover {
+    text-decoration: underline;
+}
+
+.Movie img {
+    height: 300px;
+}

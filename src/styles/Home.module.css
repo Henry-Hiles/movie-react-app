@@ -4,3 +4,13 @@
     flex-direction: column;
     gap: 1.5em;
 }
+
+.CardList {
+    display: grid;
+    justify-items: center;
+    width: 85%;
+    margin: 0 100px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
