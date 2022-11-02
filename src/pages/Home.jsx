@@ -47,7 +47,14 @@ const Home = () => {
 
     return (
         <div className={styles.Container}>
-            <TopBar search={search} setSearch={setSearch} />
+            <input
+                type="text"
+                className={styles.Search}
+                value={search}
+                autoFocus
+                placeholder="Search for movies..."
+                onChange={({ target }) => setSearch(target.value)}
+            />
             <div className={styles.CardList}>
                 {movies?.map((movie) => (
                     <Card key={movie.id} movie={movie} />

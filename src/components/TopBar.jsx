@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom"
 import styles from "styles/TopBar.module.css"
 
-const TopBar = ({ search, setSearch }) => (
+const TopBar = () => (
     <div className={styles.Container}>
-        <h1 className={styles.Title}>React Movie Finder</h1>
-        <input
-            type="text"
-            className={styles.Search}
-            value={search}
-            autoFocus
-            placeholder="Search for movies..."
-            onChange={({ target }) => setSearch(target.value)}
-        />
+        <Link to="/">
+            <h1 className={styles.Title}>React Movie Finder</h1>
+        </Link>
+        <Link to="/ratings">
+            <h1>Your ratings</h1>
+        </Link>
     </div>
 )
 

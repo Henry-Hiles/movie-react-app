@@ -3,7 +3,6 @@ import styles from "styles/Rate.module.css"
 
 const Rate = ({ rating, setRating }) => {
     const [hover, setHover] = useState()
-
     return (
         <div>
             {[...Array(5)].map((_, index) => {
@@ -15,7 +14,10 @@ const Rate = ({ rating, setRating }) => {
                         className={`${styles.Star} ${
                             index <= (hover || rating) ? styles.On : styles.Off
                         }`}
-                        onClick={() => setRating(index)}
+                        onClick={(event) => {
+                            event.preventDefault()
+                            setRating(index)
+                        }}
                         onMouseEnter={() => setHover(index)}
                         onMouseLeave={() => setHover()}
                     >

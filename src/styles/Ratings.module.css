@@ -1,0 +1,19 @@
+.Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5em;
+    color: white;
+    padding: 10px;
+    padding-top: 90px;
+}
+
+.CardList {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    gap: 20px;
+    text-align: center;
+}

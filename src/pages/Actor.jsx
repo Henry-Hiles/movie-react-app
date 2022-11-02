@@ -63,7 +63,8 @@ const Actor = () => {
 
     return (
         <div className={styles.Container}>
-            <h1>{actor?.name}</h1>
+            <hr />
+            <h1 className={styles.Name}>{actor?.name}</h1>
             <div className={styles.Section}>
                 <h2>Biography</h2>
                 <div className={styles.Description}>

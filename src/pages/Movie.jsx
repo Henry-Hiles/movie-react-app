@@ -93,6 +93,10 @@ const Movie = () => {
                 <div className={styles.Section}>
                     <h1 className={styles.Header}>Your Rating</h1>
                     <Rate rating={rating} setRating={setRating} />
+                    <br />
+                    <Link to="/ratings" className={styles.RatingsLink}>
+                        Go to ratings
+                    </Link>
                 </div>
                 <div className={styles.Section}>
                     <h1 className={styles.Header}>Actors</h1>
