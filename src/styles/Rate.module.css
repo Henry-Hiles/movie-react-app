@@ -1,0 +1,14 @@
+.Star {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.Off {
+    color: #ccc;
+}
+
+.On {
+    color: gold;
+}

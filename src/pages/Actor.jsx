@@ -3,7 +3,6 @@ import config from "config"
 import styles from "styles/Actor.module.css"
 import { Link, useParams } from "react-router-dom"
 import { GENRES } from "../constants"
-import Card from "components/Card"
 
 const Actor = () => {
     const { actorId } = useParams()

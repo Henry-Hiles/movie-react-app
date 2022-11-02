@@ -2,11 +2,21 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import styles from "styles/Movie.module.css"
 import config from "config"
+import useLocalStorage from "hooks/useLocalStorage"
+import Rate from "components/Rate"
 
 const Movie = () => {
     const { movieId } = useParams()
     const [movie, setMovie] = useState()
     const [cast, setCast] = useState()
+    const [ratings, setRatings] = useLocalStorage("ratings", [])
+    const rating = ratings.find(({ id }) => id == movieId)?.rating
+
+    const setRating = (rating) =>
+        setRatings((currentRatings) => [
+            ...currentRatings.filter(({ id }) => id != movieId),
+            { ...movie, rating },
+        ])
 
     useEffect(() => {
         const run = async () => {
@@ -63,7 +73,7 @@ const Movie = () => {
             <div className={styles.Bottom}>
                 <div className={styles.Tags}>
                     {movie.genres.map((genre) => (
-                        <p>{genre}</p>
+                        <p key={genre}>{genre}</p>
                     ))}
                     <p className={styles.Average}>
                         <span>
@@ -79,25 +89,11 @@ const Movie = () => {
                             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                         </svg>
                     </p>
-                    {false ? (
-                        <p className={styles.Average}>
-                            <span>Average Rating: {movie.averageVote}</span>
-
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                            >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                            </svg>
-                        </p>
-                    ) : (
-                        <p>Rate this movie</p>
-                    )}
                 </div>
-                <div className={styles.Section}></div>
+                <div className={styles.Section}>
+                    <h1 className={styles.Header}>Your Rating</h1>
+                    <Rate rating={rating} setRating={setRating} />
+                </div>
                 <div className={styles.Section}>
                     <h1 className={styles.Header}>Actors</h1>
                     <div className={styles.Actors}>

@@ -62,3 +62,7 @@
     display: flex;
     gap: 5px;
 }
+
+.Rate {
+    color: white;
+}
