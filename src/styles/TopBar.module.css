@@ -1,13 +1,42 @@
+.Container.HasSearch {
+    --cols: 3;
+}
+
 .Container {
-    display: flex;
+    display: grid;
     width: 100%;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: transparent;
-    position: absolute;
+    grid-template-columns: repeat(var(--cols, 2), 1fr);
+    padding: 0 30px;
+    align-items: center;
+    background: linear-gradient(to bottom, #00000090, #00000000);
     color: white;
 }
 
-.Container h1 {
+.Container.Absolute {
+    position: absolute;
+}
+
+.Container a {
     color: white;
+    text-decoration: none;
+}
+
+.Container a::hover {
+    text-decoration: underline;
+}
+
+.Search {
+    padding: 0.5em;
+    border: 2px solid white;
+    color: white;
+    font: inherit;
+    justify-self: center;
+    width: 20em;
+    height: 3em;
+    border-radius: 10px;
+    background-color: var(--secondary);
+}
+
+.Ratings {
+    justify-self: end;
 }

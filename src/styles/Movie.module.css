@@ -5,7 +5,6 @@
 .Top {
     height: 100vh;
     display: flex;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,6 +15,7 @@
 .Summary {
     background: linear-gradient(#00000035, black);
     height: 15%;
+    overflow: scroll;
     text-align: center;
 }
 
@@ -50,12 +50,15 @@
 .Tags {
     display: flex;
     gap: 10px;
+    width: 100%;
+    overflow: scroll;
 }
 
 .Tags > * {
     background-color: var(--primary);
     padding: 5px 7px;
     border-radius: 10px;
+    white-space: nowrap;
 }
 
 .Average {

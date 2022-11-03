@@ -3,7 +3,6 @@
     align-items: center;
     flex-direction: column;
     gap: 1.5em;
-    padding-top: 30px;
 }
 
 .CardList {
@@ -14,15 +13,4 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     text-align: center;
-}
-
-.Search {
-    padding: 0.5em;
-    border: 2px solid white;
-    color: white;
-    font: inherit;
-    width: 20em;
-    height: 3em;
-    border-radius: 10px;
-    background-color: var(--secondary);
 }

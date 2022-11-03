@@ -3,6 +3,7 @@ import config from "config"
 import styles from "styles/Actor.module.css"
 import { Link, useParams } from "react-router-dom"
 import { GENRES } from "../constants"
+import TopBar from "components/TopBar"
 
 const Actor = () => {
     const { actorId } = useParams()
@@ -62,63 +63,70 @@ const Actor = () => {
     }, [actorId])
 
     return (
-        <div className={styles.Container}>
-            <hr />
-            <h1 className={styles.Name}>{actor?.name}</h1>
-            <div className={styles.Section}>
-                <h2>Biography</h2>
-                <div className={styles.Description}>
-                    {actor?.biography ? (
-                        <a
-                            href="#"
-                            className={styles.Collapse}
-                            onClick={() =>
-                                setCollapsed((collapsed) => !collapsed)
-                            }
-                        >
-                            <p className={collapsed ? styles.Collapsed : ""}>
-                                {actor.biography}
-                            </p>
+        <>
+            <TopBar />
+            <div className={styles.Container}>
+                <hr />
+                <h1 className={styles.Name}>{actor?.name}</h1>
+                <div className={styles.Section}>
+                    <h2>Biography</h2>
+                    <div className={styles.Description}>
+                        {actor?.biography ? (
+                            <a
+                                href="#"
+                                className={styles.Collapse}
+                                onClick={() =>
+                                    setCollapsed((collapsed) => !collapsed)
+                                }
+                            >
+                                <p
+                                    className={
+                                        collapsed ? styles.Collapsed : ""
+                                    }
+                                >
+                                    {actor.biography}
+                                </p>
 
-                            <p className={styles.ReadMore}>
-                                {collapsed ? "Read More" : "Read Less"}
-                            </p>
+                                <p className={styles.ReadMore}>
+                                    {collapsed ? "Read More" : "Read Less"}
+                                </p>
 
-                            <p>{collapsed}</p>
-                        </a>
-                    ) : (
-                        <p>No biography available.</p>
-                    )}
+                                <p>{collapsed}</p>
+                            </a>
+                        ) : (
+                            <p>No biography available.</p>
+                        )}
+                    </div>
+                </div>
+                <div className={styles.Section}>
+                    <h2>Images</h2>
+                    <div className={styles.Images}>
+                        {images?.profiles.map((image) => (
+                            <img
+                                key={image.file_path}
+                                className={styles.Image}
+                                src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+                <div className={styles.Section}>
+                    <h2>Movies</h2>
+                    <div className={styles.Credits}>
+                        {credits?.map((movie) => (
+                            <Link
+                                to={`/movie/${movie.id}`}
+                                key={movie.id}
+                                className={styles.Movie}
+                            >
+                                <img src={movie.posterUrl} />
+                                <span>{movie.title}</span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <div className={styles.Section}>
-                <h2>Images</h2>
-                <div className={styles.Images}>
-                    {images?.profiles.map((image) => (
-                        <img
-                            key={image.file_path}
-                            className={styles.Image}
-                            src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
-                        />
-                    ))}
-                </div>
-            </div>
-            <div className={styles.Section}>
-                <h2>Movies</h2>
-                <div className={styles.Credits}>
-                    {credits?.map((movie) => (
-                        <Link
-                            to={`/movie/${movie.id}`}
-                            key={movie.id}
-                            className={styles.Movie}
-                        >
-                            <img src={movie.posterUrl} />
-                            <span>{movie.title}</span>
-                        </Link>
-                    ))}
-                </div>
-            </div>
-        </div>
+        </>
     )
 }
 

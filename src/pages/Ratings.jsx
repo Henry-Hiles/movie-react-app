@@ -1,4 +1,5 @@
 import Card from "components/Card"
+import TopBar from "components/TopBar"
 import useLocalStorage from "hooks/useLocalStorage"
 import styles from "styles/Ratings.module.css"
 
@@ -11,18 +12,21 @@ const Ratings = () => {
         ])
 
     return (
-        <div className={styles.Container}>
-            <hr />
-            <div className={styles.CardList}>
-                {ratings?.map((movie) => (
-                    <Card
-                        key={movie.id}
-                        movie={movie}
-                        setRating={(rating) => setRating(rating, movie)}
-                    />
-                ))}
+        <>
+            <TopBar />
+            <div className={styles.Container}>
+                <hr />
+                <div className={styles.CardList}>
+                    {ratings?.map((movie) => (
+                        <Card
+                            key={movie.id}
+                            movie={movie}
+                            setRating={(rating) => setRating(rating, movie)}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
