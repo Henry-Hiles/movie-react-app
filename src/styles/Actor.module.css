@@ -4,6 +4,7 @@
     padding: 15px;
     color: white;
 }
+
 .Name {
     margin-top: 10px;
 }
@@ -35,13 +36,13 @@
 
 .Collapse {
     color: white;
+    text-decoration: none;
 }
 
 .Credits {
     display: flex;
     width: 100%;
     gap: 20px;
-    height: 500px;
     overflow: scroll;
 }
 

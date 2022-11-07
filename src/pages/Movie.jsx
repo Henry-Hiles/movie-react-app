@@ -35,7 +35,7 @@ const Movie = () => {
                 title: data.title,
                 releaseDate: data.release_date,
                 year: data.release_date.split("-")[0],
-                averageVote: data.vote_average,
+                averageVote: data.vote_average / 2,
                 voteCount: data.vote_count,
                 popularity: data.popularity,
                 tagline: data.tagline,

@@ -13,6 +13,17 @@ const TopBar = ({ search, setSearch, absolute }) => {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    const Search = (
+        <input
+            type="text"
+            className={styles.Search}
+            value={search}
+            autoFocus
+            placeholder="Search for movies..."
+            onChange={({ target }) => setSearch(target.value)}
+        />
+    )
+
     return (
         <div
             className={`${styles.Container} ${
@@ -23,20 +34,13 @@ const TopBar = ({ search, setSearch, absolute }) => {
                 <h1 className={styles.Title}>React Movie Finder</h1>
             </Link>
 
-            {setSearch && (
-                <input
-                    type="text"
-                    className={styles.Search}
-                    value={search}
-                    autoFocus
-                    placeholder="Search for movies..."
-                    onChange={({ target }) => setSearch(target.value)}
-                />
-            )}
+            {setSearch && width > 1000 && Search}
 
             <Link to="/ratings" className={styles.Ratings}>
                 <h1>Your ratings</h1>
             </Link>
+
+            {setSearch && width <= 1000 && Search}
         </div>
     )
 }

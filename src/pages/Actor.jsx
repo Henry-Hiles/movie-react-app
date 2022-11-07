@@ -70,7 +70,7 @@ const Actor = () => {
                 <h1 className={styles.Name}>{actor?.name}</h1>
                 <div className={styles.Section}>
                     <h2>Biography</h2>
-                    <div className={styles.Description}>
+                    <div>
                         {actor?.biography ? (
                             <a
                                 href="#"
