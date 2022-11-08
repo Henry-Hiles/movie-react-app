@@ -12,11 +12,44 @@
     justify-content: flex-end;
 }
 
+.Thumb {
+    position: absolute;
+    left: 40px;
+    bottom: 50px;
+    box-shadow: 5px 5px 50px #00000030;
+}
+
 .Summary {
     background: linear-gradient(#00000035, black);
-    height: 15%;
+    height: 30%;
+    font-size: 20px;
     overflow: scroll;
     text-align: center;
+}
+
+.Overview {
+    font-size: 1.3em;
+}
+
+.More {
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.More:not(:hover) {
+    text-decoration: none;
+}
+
+.Title {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 70px;
+}
+
+.Tagline {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .Bottom {

@@ -9,6 +9,14 @@
     margin-top: 10px;
 }
 
+.Biography {
+    -webkit-box-orient: vertical;
+    font-size: 1.3em;
+    white-space: pre-line;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
 .Images {
     display: flex;
     overflow: scroll;
@@ -27,11 +35,6 @@
 
 .Collapsed {
     -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    overflow-wrap: break-word;
 }
 
 .Collapse {

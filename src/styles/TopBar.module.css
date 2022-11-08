@@ -6,9 +6,9 @@
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
-    padding: 10px 30px;
+    padding: 20px 30px;
     gap: 10px;
-    background: linear-gradient(to bottom, #00000090, #00000010);
+    background: #00000050;
     color: white;
 }
 
@@ -33,6 +33,7 @@
 
 .Container.Absolute {
     position: absolute;
+    background: linear-gradient(to bottom, #00000090, #00000010);
 }
 
 .Container a {

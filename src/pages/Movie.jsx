@@ -65,15 +65,32 @@ const Movie = () => {
                         backgroundImage: `url(${movie?.backdropUrl})`,
                     }}
                 >
+                    <img className={styles.Thumb} src={movie?.posterUrl} />
+
                     <div className={styles.Summary}>
-                        <h2 className={styles.Title}>
+                        <h1 className={styles.Title}>
                             {movie?.title} - {movie?.year}
-                        </h2>
-                        <p>{movie?.tagline}</p>
-                        <p className={styles.Overview}>{movie?.overview}</p>
+                        </h1>
+                        <p className={styles.Tagline}>{movie?.tagline}</p>
+                        <a href="#bottom" className={styles.More}>
+                            <p>More info</p>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                fill="currentColor"
+                                class="bi bi-chevron-down"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                                />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div className={styles.Bottom}>
+                <div className={styles.Bottom} id="bottom">
                     <div className={styles.Tags}>
                         {movie?.genres.map((genre) => (
                             <p key={genre}>{genre}</p>
@@ -92,6 +109,10 @@ const Movie = () => {
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg>
                         </p>
+                    </div>
+                    <div className={styles.Section}>
+                        <h1 className={styles.Header}>Overview</h1>
+                        <p className={styles.Overview}>{movie?.overview}</p>
                     </div>
                     <div className={styles.Section}>
                         <h1 className={styles.Header}>Your Rating</h1>

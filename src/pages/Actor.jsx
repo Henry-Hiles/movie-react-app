@@ -66,50 +66,38 @@ const Actor = () => {
         <>
             <TopBar />
             <div className={styles.Container}>
-                <hr />
-                <h1 className={styles.Name}>{actor?.name}</h1>
-                <div className={styles.Section}>
-                    <h2>Biography</h2>
-                    <div>
-                        {actor?.biography ? (
-                            <a
-                                href="#"
-                                className={styles.Collapse}
-                                onClick={() =>
-                                    setCollapsed((collapsed) => !collapsed)
-                                }
-                            >
-                                <p
-                                    className={
-                                        collapsed ? styles.Collapsed : ""
+                <div className={styles.Top}>
+                    <h1 className={styles.Name}>{actor?.name}</h1>
+                    <div className={styles.Section}>
+                        <h2>Biography</h2>
+                        <div>
+                            {actor?.biography ? (
+                                <a
+                                    href="#"
+                                    className={styles.Collapse}
+                                    onClick={() =>
+                                        setCollapsed((collapsed) => !collapsed)
                                     }
                                 >
-                                    {actor.biography}
-                                </p>
+                                    <p
+                                        className={`${
+                                            collapsed ? styles.Collapsed : ""
+                                        } ${styles.Biography}`}
+                                    >
+                                        {actor.biography}
+                                    </p>
 
-                                <p className={styles.ReadMore}>
-                                    {collapsed ? "Read More" : "Read Less"}
-                                </p>
-
-                                <p>{collapsed}</p>
-                            </a>
-                        ) : (
-                            <p>No biography available.</p>
-                        )}
+                                    <p className={styles.ReadMore}>
+                                        {collapsed ? "Read More" : "Read Less"}
+                                    </p>
+                                </a>
+                            ) : (
+                                <p>No biography available.</p>
+                            )}
+                        </div>
                     </div>
                 </div>
-                <div className={styles.Section}>
-                    <h2>Images</h2>
-                    <div className={styles.Images}>
-                        {images?.profiles.map((image) => (
-                            <img
-                                key={image.file_path}
-                                className={styles.Image}
-                                src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
-                            />
-                        ))}
-                    </div>
-                </div>
+
                 <div className={styles.Section}>
                     <h2>Movies</h2>
                     <div className={styles.Credits}>
@@ -122,6 +110,18 @@ const Actor = () => {
                                 <img src={movie.posterUrl} />
                                 <span>{movie.title}</span>
                             </Link>
+                        ))}
+                    </div>
+                </div>
+                <div className={styles.Section}>
+                    <h2>Images</h2>
+                    <div className={styles.Images}>
+                        {images?.profiles.map((image) => (
+                            <img
+                                key={image.file_path}
+                                className={styles.Image}
+                                src={`https://image.tmdb.org/t/p/w300${image.file_path}`}
+                            />
                         ))}
                     </div>
                 </div>
