@@ -5,8 +5,18 @@
     color: white;
 }
 
+.Top {
+    display: flex;
+    gap: 20px;
+}
+
+.Thumb {
+    height: 450px;
+}
+
 .Name {
     margin-top: 10px;
+    font-size: 3em;
 }
 
 .Biography {
@@ -29,8 +39,10 @@
     height: 100%;
 }
 
-.Section div {
-    margin-left: 10px;
+.Right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .Collapsed {
