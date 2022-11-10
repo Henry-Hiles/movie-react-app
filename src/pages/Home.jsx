@@ -27,9 +27,6 @@ const Home = () => {
                     .map((movie) => ({
                         id: movie.id,
                         posterUrl: `https://image.tmdb.org/t/p/w342${movie.poster_path}`,
-                        title: movie.title,
-                        year: movie.release_date.split("-")[0],
-                        averageVote: movie.vote_average / 2,
                     }))
             )
         }
