@@ -15,16 +15,20 @@ const Ratings = () => {
         <>
             <TopBar />
             <div className={styles.Container}>
-                <hr />
-                <div className={styles.CardList}>
-                    {ratings?.map((movie) => (
-                        <Card
-                            key={movie.id}
-                            movie={movie}
-                            setRating={(rating) => setRating(rating, movie)}
-                        />
-                    ))}
-                </div>
+                <h1 className={styles.Header}>Your rated movies</h1>
+                {ratings?.length ? (
+                    <div className={styles.CardList}>
+                        {ratings?.map((movie) => (
+                            <Card
+                                key={movie.id}
+                                movie={movie}
+                                setRating={(rating) => setRating(rating, movie)}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <h1 className={styles.NoMovies}>No rated movies.</h1>
+                )}
             </div>
         </>
     )

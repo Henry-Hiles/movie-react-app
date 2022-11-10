@@ -40,11 +40,15 @@ const Home = () => {
     return (
         <div className={styles.Container}>
             <TopBar search={search} setSearch={setSearch} />
-            <div className={styles.CardList}>
-                {movies?.map((movie) => (
-                    <Card key={movie.id} movie={movie} />
-                ))}
-            </div>
+            {movies?.length ? (
+                <div className={styles.CardList}>
+                    {movies?.map((movie) => (
+                        <Card key={movie.id} movie={movie} />
+                    ))}
+                </div>
+            ) : (
+                <h1 className={styles.NoMovies}>No results found</h1>
+            )}
         </div>
     )
 }

@@ -14,17 +14,21 @@
 
 .Thumb {
     position: absolute;
-    left: 40px;
+    left: 25px;
     bottom: 50px;
     box-shadow: 5px 5px 50px #00000030;
 }
 
 .Summary {
-    background: linear-gradient(#00000035, black);
-    height: 30%;
+    background: linear-gradient(#00000050, black);
     font-size: 20px;
     overflow: scroll;
+    padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .Overview {
@@ -35,6 +39,14 @@
     color: white;
     font-size: 1.3em;
     font-weight: bold;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.More p {
+    margin: 0;
 }
 
 .More:not(:hover) {
@@ -42,13 +54,15 @@
 }
 
 .Title {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-size: 70px;
+    font-size: 2.75em;
+    width: 40%;
+    margin: 0;
 }
 
 .Tagline {
-    font-size: 30px;
+    font-size: 1.65em;
+    width: 40%;
+    margin: 0;
     font-weight: bold;
 }
 

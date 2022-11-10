@@ -122,7 +122,9 @@ const Actor = () => {
                                 className={styles.Movie}
                             >
                                 <img src={movie.posterUrl} />
-                                <h3>{movie.title}</h3>
+                                <h3 className={styles.MovieTitle}>
+                                    {movie.title}
+                                </h3>
                             </Link>
                         ))}
                     </div>

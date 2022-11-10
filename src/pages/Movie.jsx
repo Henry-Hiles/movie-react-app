@@ -71,7 +71,9 @@ const Movie = () => {
                         <h1 className={styles.Title}>
                             {movie?.title} - {movie?.year}
                         </h1>
-                        <p className={styles.Tagline}>{movie?.tagline}</p>
+                        {movie?.tagline && (
+                            <p className={styles.Tagline}>{movie?.tagline}</p>
+                        )}
                         <a href="#bottom" className={styles.More}>
                             <p>More info</p>
                             <svg

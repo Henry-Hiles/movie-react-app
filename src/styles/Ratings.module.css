@@ -16,3 +16,13 @@
     gap: 20px;
     text-align: center;
 }
+
+.Header {
+    font-size: 3em;
+    margin: 10px;
+}
+
+.NoMovies {
+    width: 100%;
+    text-align: center;
+}
