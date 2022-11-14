@@ -132,14 +132,14 @@ const Movie = () => {
                                     to={`/actor/${actor.id}`}
                                     className={styles.Actor}
                                 >
-                                    {actor.profile_path ? (
-                                        <img
-                                            src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-                                            alt={actor.name}
-                                        />
-                                    ) : (
-                                        <p>Image Unavailable</p>
-                                    )}
+                                    <img
+                                        src={
+                                            actor.profile_path
+                                                ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
+                                                : "../placeholder.svg" //`https://ui-avatars.com/api/?name=${encodeURIComponent(actor.name)}&size=300`
+                                        }
+                                        alt={actor.name}
+                                    />
 
                                     <h3>{actor.name}</h3>
                                 </Link>

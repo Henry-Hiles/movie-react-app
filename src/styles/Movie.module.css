@@ -90,6 +90,10 @@
     color: white;
 }
 
+.Actor img {
+    height: 300px;
+}
+
 .Actor:not(:hover) {
     text-decoration: none;
 }
