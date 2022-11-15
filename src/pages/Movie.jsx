@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import styles from "styles/Movie.module.css"
-import config from "config"
 import useLocalStorage from "hooks/useLocalStorage"
 import Rate from "components/Rate"
 import TopBar from "components/TopBar"
@@ -22,7 +21,9 @@ const Movie = () => {
     useEffect(() => {
         const run = async () => {
             const response = await fetch(
-                `https://api.themoviedb.org/3/movie/${movieId}?api_key=${config.apiKey}`
+                `https://api.themoviedb.org/3/movie/${movieId}?api_key=${
+                    import.meta.env.VITE_APIKEY
+                }`
             )
             const data = await response.json()
             setMovie({
@@ -47,7 +48,9 @@ const Movie = () => {
     useEffect(() => {
         const run = async () => {
             const response = await fetch(
-                `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${config.apiKey}`
+                `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${
+                    import.meta.env.VITE_APIKEY
+                }`
             )
             const data = await response.json()
             setCast(data.cast)

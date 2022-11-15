@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import config from "config"
 import styles from "styles/Actor.module.css"
 import { Link, useParams } from "react-router-dom"
 import { GENRES } from "../constants"
@@ -15,7 +14,9 @@ const Actor = () => {
     useEffect(() => {
         const run = async () => {
             const response = await fetch(
-                `https://api.themoviedb.org/3/person/${actorId}?api_key=${config.apiKey}`
+                `https://api.themoviedb.org/3/person/${actorId}?api_key=${
+                    import.meta.env.VITE_APIKEY
+                }`
             )
             const data = await response.json()
             setActor(data)
@@ -26,7 +27,9 @@ const Actor = () => {
     useEffect(() => {
         const run = async () => {
             const response = await fetch(
-                `https://api.themoviedb.org/3/person/${actorId}/images?api_key=${config.apiKey}`
+                `https://api.themoviedb.org/3/person/${actorId}/images?api_key=${
+                    import.meta.env.VITE_APIKEY
+                }`
             )
             const data = await response.json()
             setImages(data)
@@ -37,7 +40,9 @@ const Actor = () => {
     useEffect(() => {
         const run = async () => {
             const response = await fetch(
-                `https://api.themoviedb.org/3/person/${actorId}/movie_credits?api_key=${config.apiKey}`
+                `https://api.themoviedb.org/3/person/${actorId}/movie_credits?api_key=${
+                    import.meta.env.VITE_APIKEY
+                }`
             )
             const data = await response.json()
             setCredits(

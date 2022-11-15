@@ -2,7 +2,6 @@ import TopBar from "components/TopBar"
 import useDebounce from "hooks/useDebounce"
 import { useEffect, useState } from "react"
 import styles from "styles/Home.module.css"
-import config from "config"
 import Card from "components/Card"
 
 const Home = () => {
@@ -17,7 +16,7 @@ const Home = () => {
                 `https://api.themoviedb.org/3/${
                     debouncedSearch ? "search" : "discover"
                 }/movie?api_key=${
-                    config.apiKey
+                    import.meta.env.VITE_APIKEY
                 }&page=${page}&query=${encodeURIComponent(debouncedSearch)}`
             )
             const data = await response.json()
