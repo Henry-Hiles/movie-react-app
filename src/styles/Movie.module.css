@@ -19,6 +19,12 @@
     box-shadow: 5px 5px 50px #00000030;
 }
 
+@media (max-width: 1200px) {
+    .Thumb {
+        display: none;
+    }
+}
+
 .Summary {
     background: linear-gradient(#00000050, black);
     font-size: 20px;
