@@ -9,9 +9,9 @@ const App = () => (
     <div className={styles.App}>
         <Routes>
             <Route index element={<Home />} />
-            <Route path="/movie/:movieId" element={<Movie />} />
-            <Route path="/actor/:actorId" element={<Actor />} />
-            <Route path="/ratings" element={<Ratings />} />
+            <Route path="movie/:movieId" element={<Movie />} />
+            <Route path="actor/:actorId" element={<Actor />} />
+            <Route path="ratings" element={<Ratings />} />
             <Route path="*" element={<h1>404 - Not Found</h1>} />
         </Routes>
     </div>
