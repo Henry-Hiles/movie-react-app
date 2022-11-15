@@ -4,7 +4,7 @@ import path from "path"
 
 export default defineConfig({
     plugins: [react()],
-    base: '/movie-react-app',
+    base: '/movie-react-app/',
     resolve: {
         alias: {
             styles: path.resolve(__dirname, "/src/styles"),
