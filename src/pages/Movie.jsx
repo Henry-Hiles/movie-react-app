@@ -4,6 +4,7 @@ import styles from "styles/Movie.module.css"
 import useLocalStorage from "hooks/useLocalStorage"
 import Rate from "components/Rate"
 import TopBar from "components/TopBar"
+import { HashLink } from "react-router-hash-link"
 
 const Movie = () => {
     const { movieId } = useParams()
@@ -77,7 +78,7 @@ const Movie = () => {
                         {movie?.tagline && (
                             <p className={styles.Tagline}>{movie?.tagline}</p>
                         )}
-                        <a href="#bottom" className={styles.More}>
+                        <HashLink to="#bottom" className={styles.More}>
                             <p>More info</p>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +92,7 @@ const Movie = () => {
                                     d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
                                 />
                             </svg>
-                        </a>
+                        </HashLink>
                     </div>
                 </div>
                 <div className={styles.Bottom} id="bottom">
