@@ -1,132 +1,132 @@
 .Container {
-    color: white;
+	color: white;
 }
 
 .Top {
-    height: 100vh;
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    justify-content: flex-end;
+	height: 100vh;
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .Thumb {
-    position: absolute;
-    left: 25px;
-    bottom: 50px;
-    box-shadow: 5px 5px 50px #00000030;
+	position: absolute;
+	left: 25px;
+	bottom: 50px;
+	box-shadow: 5px 5px 50px #00000030;
 }
 
 @media (max-width: 1200px) {
-    .Thumb {
-        display: none;
-    }
+	.Thumb {
+		display: none;
+	}
 }
 
 .Summary {
-    background: linear-gradient(#00000050, black);
-    font-size: 20px;
-    overflow: scroll;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+	background: linear-gradient(#00000050, black);
+	font-size: 20px;
+	overflow: auto;
+	padding: 10px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
 .Overview {
-    font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 .More {
-    color: white;
-    font-size: 1.3em;
-    font-weight: bold;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    align-items: center;
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	display: flex;
+	gap: 5px;
+	flex-direction: column;
+	align-items: center;
 }
 
 .More p {
-    margin: 0;
+	margin: 0;
 }
 
 .More:not(:hover) {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .Title {
-    font-size: 2.75em;
-    width: 40%;
-    margin: 0;
+	font-size: 2.75em;
+	width: 40%;
+	margin: 0;
 }
 
 .Tagline {
-    font-size: 1.65em;
-    width: 40%;
-    margin: 0;
-    font-weight: bold;
+	font-size: 1.65em;
+	width: 40%;
+	margin: 0;
+	font-weight: bold;
 }
 
 .Bottom {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    padding: 20px 40px;
-    flex-direction: column;
+	background-color: black;
+	min-height: 100vh;
+	display: flex;
+	padding: 20px 40px;
+	flex-direction: column;
 }
 
 .Section div {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .Actors {
-    display: flex;
-    overflow: scroll;
-    align-items: start;
-    gap: 15px;
+	display: flex;
+	overflow: auto;
+	align-items: start;
+	gap: 15px;
 }
 
 .Actor {
-    text-align: center;
-    color: white;
+	text-align: center;
+	color: white;
 }
 
 .Actor img {
-    height: 300px;
+	height: 300px;
 }
 
 .Actor:not(:hover) {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .Tags {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    overflow: scroll;
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	overflow: auto;
 }
 
 .Tags > * {
-    background-color: var(--primary);
-    padding: 5px 7px;
-    border-radius: 10px;
-    white-space: nowrap;
+	background-color: var(--primary);
+	padding: 5px 7px;
+	border-radius: 10px;
+	white-space: nowrap;
 }
 
 .Average {
-    display: flex;
-    gap: 5px;
+	display: flex;
+	gap: 5px;
 }
 
 .Rate {
-    color: white;
+	color: white;
 }
 
 .RatingsLink {
-    color: white;
+	color: white;
 }
