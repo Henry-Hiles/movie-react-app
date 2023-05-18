@@ -86,7 +86,7 @@ const Actor = () => {
                             <div>
                                 {actor?.biography ? (
                                     <a
-                                        href="#"
+                                        href="javascript:void"
                                         className={styles.Collapse}
                                         onClick={() =>
                                             setCollapsed(
